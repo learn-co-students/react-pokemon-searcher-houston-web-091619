@@ -13,11 +13,20 @@ class PokemonForm extends React.Component {
     }
   }
 
+  handleSubmit=(e)=>{
+    this.setState({
+      name:e.target[0].value,
+      hp:e.target[1].value,
+      frontUrl:e.target[2].value,
+      backUrl:e.target[3].value
+    },()=>this.props.addPokemon(this.state))
+  }
+
   render() {
     return (
       <div>
         <h3>Add a Pokemon!</h3>
-        <Form onSubmit={this.handleSubmit}>
+        <Form onSubmit={(e)=>this.handleSubmit(e)}>
           <Form.Group widths="equal">
             <Form.Input fluid label="Name" placeholder="Name" name="name" />
             <Form.Input fluid label="hp" placeholder="hp" name="hp" />
