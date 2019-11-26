@@ -14,7 +14,7 @@ class PokemonPage extends React.Component {
         <br />
         <Search onChange={() => console.log('🤔')} />
         <br />
-        <PokemonCollection />
+        <PokemonCollection pokemons={this.props.pokemons} />
       </Container>
     )
   }
